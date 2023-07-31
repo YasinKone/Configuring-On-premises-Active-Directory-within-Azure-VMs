@@ -3,7 +3,7 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
+This tutorial guides you on how to deploy active directery using two virtual machines from Microsoft Azure creating a domain controller and client.<br />
 
 
 
@@ -30,26 +30,26 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-![image](https://github.com/YasinKone/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/98929107/350d4bdf-4199-4553-99f8-47f6f83ff904)
+<img src="https://i.imgur.com/NKbdZCu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+This is where you go to change the IP address to static if you look at the top of the image you can see the steps to take to get there virutal machines, DC-1 (thats what I named my domain controller so basically your domain controller), networking, your NIC, and finally IP configurations
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/etp0sdr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Press roles and features, then press next untill you reach server roles and check active directory domain services and install it then press the flag in the top right corner and promote the server to a domain controller and make the info such as the domain name and user as you like (you will be signed out jsut log back in). When logging back in the new format for your user name is (domainname).com\username
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/MqwfFC0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+under your folder with your domain name make some orgainizational units add users via a powershell script, give them permissions, and log into one of the users with the client virtual machine with the same format (domainname).com\username. As you can see I have made multiple groups Employees, Admins, and a security group that has sccounting in it.
 </p>
 <br />
